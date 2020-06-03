@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const port = 5000
 const bodyParser = require("body-parser");
+
+const config = require("./config/key");
+
 const {User} = require("./models/User");
 
 // bodyParser 가 클라이언트에서 오는정보를 서버에서 분석해서 가져온다
@@ -12,7 +15,7 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
 const mongoose = require("mongoose")
-mongoose.connect("mongodb+srv://geonwan:rjsdhks12@boilerplate-slc6j.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect(config.mongoURI, {
     // 쓰면 애러가 안난다
     useNewUrlParser : true ,
     useUnifiedTopology : true , 
