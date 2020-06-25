@@ -1,6 +1,7 @@
 import React from 'react'
 
-// rfce 자동완성
+
+// rfce 
 function Footer() {
     return (
         <div>
@@ -9,5 +10,6 @@ function Footer() {
     )
 }
 
-// rfce 자동완성
+
+// rfce 
 export default Footer
