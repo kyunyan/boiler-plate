@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 const mongoose = require("mongoose")
-mongoose.connect(config.mongoURI, {
+mongoose.connect(config.mongoURI, {       //
     // 쓰면 애러가 안난다
     useNewUrlParser : true ,
     useUnifiedTopology : true , 
@@ -37,7 +37,7 @@ app.get("/api/hello", (req, res) => {
   res.send("안녕하세요~ ");
 })
 
-app.post("/api/users/register" , (req, res) => { debugger;
+app.post("/api/users/register" , (req, res) => {
   console.log("userInfo" + req.body);
   //  회원 가입 할때 필요한 정보들을 client에서 가져오면
   // 그것들을 데이터 베이스에 넣어준다.

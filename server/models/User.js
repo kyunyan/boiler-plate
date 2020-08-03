@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 var jwt = require('jsonwebtoken');
 
+// 모델은 스키마를 감싸주는 역활
 const userSchema = mongoose.Schema({
     name : {
         type : String , 
@@ -21,6 +22,7 @@ const userSchema = mongoose.Schema({
         type : String , 
         maxlength : 50
     },
+    // 관리자
     role : {
         type : Number , 
         default : 0
