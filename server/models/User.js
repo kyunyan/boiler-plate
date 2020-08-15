@@ -49,9 +49,9 @@ userSchema.pre("save", function(next){
             console.log("presave pasword: "+user.password);
             console.log("presave salt : "+salt);
             bcrypt.hash(user.password, salt, function(err, hash) {
-            if(err)      return next(err);
-            console.log("presave hash : "+ hash);
-            user.password = hash
+                if(err)      return next(err);
+                console.log("presave hash : "+ hash);
+                user.password = hash
                 
                 next();
             });
